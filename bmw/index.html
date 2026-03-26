@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW M3 Competition • THE DROP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <style>
+    /* 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .hero-bg { background-image: url('https://tse2.mm.bing.net/th/id/OIP.G2b8DBzR_EGQyIHSkHhv2AHaFB?rs=1&pid=ImgDetMain&o=7&rm=3'); } /* substitua pela imagem real 
+ */
+ /* Remova ou comente a linha da imagem antiga */
+/* .hero-bg { background-image: url(...); } */
+
+.video-docker video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+ .carbon { background: linear-gradient(180deg, #111111 0%, #1a1a1a 100%); }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+  <nav class="fixed top-0 left-0 right-0 z-50 carbon border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-8 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl font-black tracking-[-2px]">BMW</span>
+        <span class="text-red-600 text-3xl font-black tracking-[-2px]">M3</span>
+        <span class="text-3xl font-bold"> COMPETITION</span>
+      </div>
+      <div class="flex gap-8 text-sm font-medium uppercase tracking-widest">
+        <a href="#drop" class="hover:text-red-600 transition">THE DROP</a>
+        <a href="#performance" class="hover:text-red-600 transition">PERFORMANCE</a>
+        <a href="#design" class="hover:text-red-600 transition">DESIGN</a>
+        <a href="#interior" class="hover:text-red-600 transition">INTERIOR</a>
+        <a href="#configure" class="hover:text-red-600 transition">CONFIGURE</a>
+      </div>
+      <button onclick="document.getElementById('configure').scrollIntoView({behavior:'smooth'})"
+        class="px-8 py-4 bg-red-600 hover:bg-red-700 transition font-bold uppercase text-sm tracking-widest">
+        GET THE DROP
+      </button>
+    </div>
+  </nav>
+<section id="hero" class="relative h-screen overflow-hidden flex items-center">
+    <div class="video-docker absolute inset-0 z-0">
+        <video class="min-w-full min-h-full absolute object-cover" 
+               src="d:\bmw\13127448_1920_1080_60fps.mp4" 
+               type="video/mp4" autoplay muted loop playsinline></video>
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black z-10"></div>
+    
+    <canvas id="speedCanvas" class="absolute inset-0 pointer-events-none z-20"></canvas> 
+
+    <div class="max-w-screen-2xl mx-auto px-8 relative z-30">
+        <div class="max-w-2xl">
+            <h1 id="heroTitle" class="text-8xl md:text-9xl font-black leading-none tracking-[-4px] mb-4">
+                THE M3<br>COMPETITION<br>DROP
+            </h1>
+            <p class="text-2xl text-gray-300 mb-8">523 cv • 3,4 s • 0-100 km/h • Edição Limitada</p>
+            <div class="flex gap-4">
+                <button onclick="document.getElementById('performance').scrollIntoView({behavior:'smooth'})"
+                    class="px-10 py-5 bg-white text-black font-bold uppercase tracking-widest text-lg hover:scale-105 transition">
+                    DESCUBRA O DROP
+                </button>
+                <button onclick="document.getElementById('configure').scrollIntoView({behavior:'smooth'})"
+                    class="px-10 py-5 border-2 border-white font-bold uppercase tracking-widest text-lg hover:bg-white hover:text-black transition">
+                    CONFIGURAR AGORA
+                </button>
+            </div>
+            
+            <div class="mt-16 flex items-center gap-8 text-sm">
+                <div>
+                    <span class="text-red-600 font-bold">M xDRIVE</span><br>
+                    <span class="text-4xl font-black">523 cv</span>
+                </div>
+                <div class="h-12 w-px bg-white/30"></div>
+                <div>
+                    <span class="text-red-600 font-bold">0-100 KM/H</span><br>
+                    <span id="zeroToHundred" class="text-4xl font-black">3.4s</span>
+                </div>
+                <div class="h-12 w-px bg-white/30"></div>
+                <div>
+                    <span class="text-red-600 font-bold">TOP SPEED</span><br>
+                    <span class="text-4xl font-black">290 km/h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-xs tracking-widest">
+        <span>SCROLL FOR THE DROP</span>
+        <div class="w-px h-12 bg-gradient-to-b from-transparent via-white to-transparent"></div>
+    </div>
+</section>
+  <section id="drop" class="carbon py-24">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="uppercase text-red-600 font-bold tracking-widest">LIMITED DROP • 2026</span>
+          <h2 class="text-6xl font-black leading-none mt-3">O carro que redefine o que é possível em um sedan familiar.</h2>
+          <p class="mt-6 text-gray-300 text-lg">Inspirado na cultura drop, a BMW M3 Competition chega como o lançamento mais exclusivo do ano. 523 cv de pura emoção em um pacote que a própria BMW chama de “o mais brutal M3 de todos os tempos”.</p>
+        </div>
+        <div class="relative">
+          <img src="https://th.bing.com/th/id/OIP.t1KUJcvTbnH-odRI8m3qwAHaEK?w=315&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="BMW M3 Competition" class="rounded-2xl shadow-2xl shadow-red-600/20">
+          <div class="absolute -top-4 -right-4 bg-red-600 text-white text-xs font-bold px-6 py-2 rounded-full">523 HP • M xDRIVE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="performance" class="py-24 bg-black">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <h2 class="text-5xl font-black mb-12 text-center">ESPECIFICAÇÕES TÉCNICAS</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-zinc-900 p-8 rounded-3xl text-center group">
+          <div class="text-red-600 text-sm font-bold">MOTOR</div>
+          <div id="hp" class="text-7xl font-black mt-2">523</div>
+          <div class="text-2xl">cv • 3.0L TwinPower Turbo</div>
+        </div>
+        <div class="bg-zinc-900 p-8 rounded-3xl text-center group">
+          <div class="text-red-600 text-sm font-bold">ACELERAÇÃO</div>
+          <div id="accel" class="text-7xl font-black mt-2">3.4</div>
+          <div class="text-2xl">segundos 0-100 km/h</div>
+        </div>
+        <div class="bg-zinc-900 p-8 rounded-3xl text-center group">
+          <div class="text-red-600 text-sm font-bold">TORQUE</div>
+          <div id="torque" class="text-7xl font-black mt-2">650</div>
+          <div class="text-2xl">Nm @ 2750 rpm</div>
+        </div>
+        <div class="bg-zinc-900 p-8 rounded-3xl text-center group">
+          <div class="text-red-600 text-sm font-bold">VELOCIDADE MÁXIMA</div>
+          <div id="topSpeed" class="text-7xl font-black mt-2">290</div>
+          <div class="text-2xl">km/h</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="design" class="carbon py-24">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <h2 class="text-5xl font-black mb-12">DESIGN QUE QUEBRA PARADIGMAS</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="https://images.alphacoders.com/119/thumbbig-1190535.webp" alt="M3 Competition" class="rounded-3xl hover:scale-105 transition duration-500 cursor-pointer">
+        <img src="https://th.bing.com/th/id/OIP.KPbmeL3sNgkz1ZNus42JNAHaEK?w=287&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="M3 Competition" class="rounded-3xl hover:scale-105 transition duration-500 cursor-pointer">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.UvUgeLdjXRlwOg4UCbgGUQHaE6?pid=ImgDet&w=192&h=127&c=7&o=7&rm=3" alt="M3 Competition" class="rounded-3xl hover:scale-105 transition duration-500 cursor-pointer">
+      </div>
+    </div>
+  </section>
+  <section id="interior" class="py-24">
+    <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="text-5xl font-black">INTERIOR M PERFORMANCE</h2>
+        <p class="mt-6 text-gray-300">Carbono, Alcantara, volante com M1/M2/M3 buttons e o cockpit digital mais avançado da BMW.</p>
+      </div>
+      <img src="https://th.bing.com/th/id/OIP.2zjbSSqyXLqBdGvQiqJjjQHaEK?w=329&h=185&c=7&r=0&o=7&pid=1.7&rm=3" alt="Interior M3" class="rounded-3xl shadow-2xl">
+    </div>
+  </section>
+  <section id="configure" class="carbon py-32 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-6xl font-black mb-6">PRONTO PARA O SEU DROP?</h2>
+      <p class="text-2xl text-gray-300 mb-10">Monte a sua M3 Competition exatamente como você sonha. Edição limitada 2026.</p>
+      <button class="px-16 py-7 bg-red-600 text-2xl font-bold uppercase tracking-widest hover:bg-red-700 transition rounded-full">
+        CONFIGURAR AGORA • THE DROP
+      </button>
+    </div>
+  </section>
+
+  <footer class="carbon py-12 text-center text-xs tracking-widest">
+    © 2026 BMW M3 | PELG • Feito com obsessão por performance e design
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from("#heroTitle", { y: 100, opacity: 0, duration: 1.2, ease: "power4.out" });
+    function animateCounter(id, target, suffix = "") {
+      let count = 0;
+      const step = target / 60;
+      const timer = setInterval(() => {
+        count += step;
+        if (count >= target) {
+          count = target;
+          clearInterval(timer);
+        }
+        document.getElementById(id).textContent = Math.floor(count) + suffix;
+      }, 16);
+    }
+    animateCounter("hp", 523);
+    animateCounter("accel", 3.4, "s");
+    animateCounter("torque", 650);
+    animateCounter("topSpeed", 290);
+    const canvas = document.getElementById('speedCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let particles = [];
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height;
+        this.speed = Math.random() * 8 + 6;
+        this.length = Math.random() * 80 + 40;  }  update() {
+        this.y -= this.speed;
+        if (this.y < -this.length) this.y = canvas.height;
+      }
+      draw() {
+        ctx.strokeStyle = "rgba(255, 0, 0, 0.6)";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x, this.y + this.length);
+        ctx.stroke();   } }
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 80; i++) particles.push(new Particle());
+    }
+    function animateCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animateCanvas);
+    }
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    });
+    initParticles();
+    animateCanvas();
+    gsap.utils.toArray("section").forEach(section => {
+      gsap.from(section, {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: { trigger: section, start: "top 80%" }
+      });
+    });
+  </script>
+</body>
+</html>
